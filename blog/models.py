@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.utils import timezone
+
 # Create a Blog models
 #   Title
 #   public date
@@ -17,6 +19,6 @@ from django.db import models
 class Blog(models.Model):
 
     image   = models.ImageField(upload_to = 'images/blogs')
-    date    = models.DateTimeField(default='date',null=True,blank=True)
+    pub_date    = models.DateTimeField(blank=True, null=True)
     title   = models.CharField(max_length = 235, default='')
     summery = models.TextField()
